@@ -11,11 +11,8 @@ rf_model = joblib.load('model/rf_model.pkl')
 svr_model = joblib.load('model/svr_model.pkl')
 ann_model = tf.keras.models.load_model('model/ann_model.h5')
 
-# Preprocessing pipeline from RF model
-preprocessor = rf_model.named_steps['preprocessor']
-
-# Carbon cleaning threshold
-CLEANING_THRESHOLD = 250
+preprocessor = rf_model.named_steps['preprocessor']    # Preprocessing pipeline from RF model
+CLEANING_THRESHOLD = 250    # Carbon cleaning threshold
 
 @app.route('/')
 def home():
@@ -28,7 +25,6 @@ def predict():
     cylinders = int(request.form['cylinders'])
     fuel_type = request.form['fuel_type']
     fuel_cons = float(request.form['fuel_cons'])
-
     # Create input DataFrame
     input_df = pd.DataFrame({
         'Engine Size(L)': [engine_size],
@@ -36,9 +32,7 @@ def predict():
         'Fuel Type': [fuel_type],
         'Fuel Consumption Comb (mpg)': [fuel_cons]
     })
-
-    # Preprocess for ANN
-    X_processed = preprocessor.transform(input_df)
+    X_processed = preprocessor.transform(input_df)    # Preprocess for ANN
 
     # Predictions from each model
     rf_pred = rf_model.predict(input_df)[0]
