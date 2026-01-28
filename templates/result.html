@@ -108,7 +108,6 @@
 <body>
     <div class="container" id="resultContent">
         <h1>Prediction Result</h1>
-
         <div class="step active" id="step1">
             <h2>Predicted CO2 Emission: {{ prediction }} g/km</h2>
             <div class="scale-bar">
@@ -116,7 +115,6 @@
             </div>
             <p>Carbon Cleaning: <strong>{{ suggestion }}</strong></p>
         </div>
-
         <div class="step" id="step2">
             <div class="precaution">
                 {% if prediction > 250 %}
@@ -143,7 +141,6 @@
                 {% endif %}
             </div>
         </div>
-
         <div class="step" id="step3">
             <div class="maintenance-recommendations">
                 <h3>🛠 Maintenance Recommendations</h3>
@@ -178,25 +175,20 @@
             <a href="/"><button>🔄 Predict Again</button></a>
         </div>
     </div>
-
     <script>
         const steps = document.querySelectorAll('.step');
         let currentStep = 0;
-
         function showStep(index) {
             steps.forEach((step, i) => {
                 step.classList.toggle('active', i === index);
             });
-
             const prevButton = document.getElementById('prevBtn');
             const nextButton = document.getElementById('nextBtn');
-
             if (index === 0) {
                 prevButton.style.display = 'none';
             } else {
                 prevButton.style.display = 'inline-block';
             }
-
             if (index === steps.length - 1) {
                 nextButton.style.display = 'none';
             } else {
@@ -221,7 +213,6 @@
         function downloadPDF() {
             const previousStep = currentStep;
             steps.forEach(step => step.classList.add('active'));
-
             setTimeout(() => {
                 const element = document.getElementById('resultContent');
                 const opt = {
@@ -244,7 +235,6 @@
         window.onload = function () {
             const prediction = parseFloat("{{ prediction }}");
             let glow = "";
-
             if (prediction < 150) {
                 glow = "0 0 20px 4px rgba(0, 255, 0, 0.6)";  // Green
             } else if (prediction < 200) {
@@ -254,10 +244,8 @@
             } else {
                 glow = "0 0 20px 4px rgba(255, 0, 0, 0.6)";  // Red
             }
-
             document.getElementById("resultContent").style.boxShadow = glow;
         };
-
         showStep(currentStep);
     </script>
 </body>
