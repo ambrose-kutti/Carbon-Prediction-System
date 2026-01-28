@@ -4,213 +4,217 @@
     <meta charset="UTF-8">
     <title>CO2 Emission Predictor</title>
     <style>
-    @keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+		    @keyframes gradientShift {
+			    0% {
+			        background-position: 0% 50%;
+			    }
+			    50% {
+			        background-position: 100% 50%;
+			    }
+			    100% {
+			        background-position: 0% 50%;
+			    }
+			}
 
-body {
-    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease infinite;
-}
-        :root {
-            --light-bg: #f0f0f0;
-            --light-text: #000;
-            --dark-bg: linear-gradient(to right, #00c6ff, #0072ff);
-            --dark-card-bg: rgba(0, 0, 0, 0.6);
-            --dark-text: #fff;
-        }
-    input:focus, select:focus, button:focus {
-    outline: 2px solid #ffd700;
-    outline-offset: 2px;
-}
+			body {
+			    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+			    background-size: 400% 400%;
+			    animation: gradientShift 20s ease infinite;
+			}
+		
+	        :root {
+	            --light-bg: #f0f0f0;
+	            --light-text: #000;
+	            --dark-bg: linear-gradient(to right, #00c6ff, #0072ff);
+	            --dark-card-bg: rgba(0, 0, 0, 0.6);
+	            --dark-text: #fff;
+	        }
+		
+		    input:focus, select:focus, button:focus {
+		    outline: 2px solid #ffd700;
+		    outline-offset: 2px;
+			}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: var(--dark-bg);
-            color: var(--dark-text);
-            transition: background 0.5s, color 0.5s;
-        }
+	        body {
+	            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	            margin: 0;
+	            padding: 0;
+	            background: var(--dark-bg);
+	            color: var(--dark-text);
+	            transition: background 0.5s, color 0.5s;
+	        }
 
-        .light-mode {
-            background: var(--light-bg);
-            color: var(--light-text);
-        }
+	        .light-mode {
+	            background: var(--light-bg);
+	            color: var(--light-text);
+	        }
 
-        .light-mode .container {
-            background: #ffffff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
+	        .light-mode .container {
+	            background: #ffffff;
+	            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	        }
 
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            background: none;
-            padding: 20px;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+	        .container {
+	            max-width: 1100px;
+	            margin: 50px auto;
+	            background: none;
+	            padding: 20px;
+	            display: flex;
+	            gap: 20px;
+	            flex-wrap: wrap;
+	        }
 
-        .form-box {
-            flex: 1;
-            min-width: 300px;
-            background: var(--dark-card-bg);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-            transition: background 0.5s;
-        }
+	        .form-box {
+	            flex: 1;
+	            min-width: 300px;
+	            background: var(--dark-card-bg);
+	            padding: 40px;
+	            border-radius: 15px;
+	            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+	            transition: background 0.5s;
+	        }
 
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #ffd700;
-        }
+	        h1 {
+	            text-align: center;
+	            font-size: 2.5em;
+	            margin-bottom: 30px;
+	            color: #ffd700;
+	        }
 
-        form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
+	        form label {
+	            display: block;
+	            margin-bottom: 5px;
+	            font-weight: bold;
+	            margin-top: 15px;
+	        }
 
-        form input, form select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1.5px solid transparent;
-            margin-bottom: 10px;
-            font-size: 1em;
-            background-color: #f8f8f8;
-            transition: border 0.3s, background 0.3s;
-        }
+	        form input, form select {
+	            width: 100%;
+	            padding: 10px;
+	            border-radius: 8px;
+	            border: 1.5px solid transparent;
+	            margin-bottom: 10px;
+	            font-size: 1em;
+	            background-color: #f8f8f8;
+	            transition: border 0.3s, background 0.3s;
+	        }
 
-        .light-mode form input,
-        .light-mode form select {
-            border: 1.5px solid #ccc;
-            background-color: #fff;
-        }
+	        .light-mode form input,
+	        .light-mode form select {
+	            border: 1.5px solid #ccc;
+	            background-color: #fff;
+	        }
 
-        form button {
-            width: 100%;
-            background-color: #ffd700;
-            color: #000;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background 0.3s ease;
-            margin-top: 20px;
-            cursor: pointer;
-        }
+	        form button {
+	            width: 100%;
+	            background-color: #ffd700;
+	            color: #000;
+	            padding: 12px;
+	            border: none;
+	            border-radius: 10px;
+	            font-weight: bold;
+	            font-size: 1.1em;
+	            transition: background 0.3s ease;
+	            margin-top: 20px;
+	            cursor: pointer;
+	        }
 
-        form button:hover {
-            background-color: #ffa500;
-        }
+	        form button:hover {
+	            background-color: #ffa500;
+	        }
 
-        .toggle-theme {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            background-color: #ffd700;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 15px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+	        .toggle-theme {
+	            position: absolute;
+	            top: 20px;
+	            right: 30px;
+	            background-color: #ffd700;
+	            border: none;
+	            border-radius: 20px;
+	            padding: 8px 15px;
+	            font-weight: bold;
+	            cursor: pointer;
+	            transition: background 0.3s ease;
+	        }
 
-        .toggle-theme:hover {
-            background-color: #ffa500;
-        }
+	        .toggle-theme:hover {
+	            background-color: #ffa500;
+	        }
 
-        .step {
-            display: none;
-        }
+	        .step {
+	            display: none;
+	        }
 
-        .step.active {
-            display: block;
-        }
+	        .step.active {
+	            display: block;
+	        }
 
-        .step-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-	        gap: 10px;
-        }
-    .step-buttons button {
-    flex: 1;
-    margin: 0 5px; /* Gives space on the left and right of each button */
-}
+	        .step-buttons {
+	            display: flex;
+	            justify-content: space-between;
+	            margin-top: 20px;
+		        gap: 10px;
+	        }
+		
+		    .step-buttons button {
+			    flex: 1;
+			    margin: 0 5px; /* Gives space on the left and right of each button */
+			}
 
-        .preview-panel {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 20px;
-            color: #fff;
-            flex: 1;
-            min-width: 300px;
-            font-size: 1em;
-            transition: background 0.3s;
-        }
+	        .preview-panel {
+	            background: rgba(255, 255, 255, 0.08);
+	            border-radius: 15px;
+	            padding: 20px;
+	            color: #fff;
+	            flex: 1;
+	            min-width: 300px;
+	            font-size: 1em;
+	            transition: background 0.3s;
+	        }
 
-        .light-mode .preview-panel {
-            background: #f9f9f9;
-            color: #000;
-        }
+	        .light-mode .preview-panel {
+	            background: #f9f9f9;
+	            color: #000;
+	        }
 
-        .preview-title {
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #ffd700;
-        }
+	        .preview-title {
+	            font-weight: bold;
+	            font-size: 1.2em;
+	            margin-bottom: 10px;
+	            color: #ffd700;
+	        }
 
-        .preview-item {
-            margin-bottom: 8px;
-        }
-    .fuel-info-box {
-    display: flex;
-    align-items: center;
-    background: rgba(255,255,255,0.07);
-    border-radius: 12px;
-    padding: 15px;
-    margin-top: 10px;
-    transition: background 0.3s ease;
-    gap: 15px;
-}
+	        .preview-item {
+	            margin-bottom: 8px;
+	        }
+		
+		    .fuel-info-box {
+			    display: flex;
+			    align-items: center;
+			    background: rgba(255,255,255,0.07);
+			    border-radius: 12px;
+			    padding: 15px;
+			    margin-top: 10px;
+			    transition: background 0.3s ease;
+			    gap: 15px;
+			}
 
-.fuel-icon {
-    font-size: 2em;
-}
+			.fuel-icon {
+			    font-size: 2em;
+			}
 
-.fuel-text {
-    font-size: 0.95em;
-    color: #ffd700;
-}
+			.fuel-text {
+			    font-size: 0.95em;
+			    color: #ffd700;
+			}
 
-.light-mode .fuel-info-box {
-    background: #f0f0f0;
-    color: #333;
-}
+			.light-mode .fuel-info-box {
+			    background: #f0f0f0;
+			    color: #333;
+			}
 
-.light-mode .fuel-text {
-    color: #555;
-}
+			.light-mode .fuel-text {
+			    color: #555;
+			}
 
     </style>
 </head>
@@ -220,37 +224,30 @@ body {
         <div class="form-box">
             <h1>CO2 Emission Predictor</h1>
             <form id="wizardForm" action="/predict" method="post" role="form" aria-label="CO2 emission prediction input form">
-
                 <div class="step active">
                     <label for="engine_size">Engine Size (L):</label>
-<input type="number" id="engine_size" name="engine_size" step="0.1" required aria-required="true" tabindex="0" value="{{ engine_size if engine_size is defined else '' }}">
-
-
+					<input type="number" id="engine_size" name="engine_size" step="0.1" required aria-required="true" tabindex="0" value="{{ engine_size if engine_size is defined else '' }}">
                     <label for="cylinders">Cylinders:</label>
                     <input type="number" name="cylinders" required value="{{ cylinders if cylinders is defined else '' }}">
                 </div>
-
                 <div class="step">
                     <label for="fuel_type">Fuel Type:</label>
-<select name="fuel_type" required onchange="updateFuelInfo(this.value)">
-    <option value="Z" {% if fuel_type == 'Z' %}selected{% endif %}>Premium Gasoline</option>
-    <option value="D" {% if fuel_type == 'D' %}selected{% endif %}>Diesel</option>
-    <option value="E" {% if fuel_type == 'E' %}selected{% endif %}>Ethanol</option>
-    <option value="N" {% if fuel_type == 'N' %}selected{% endif %}>Natural Gas</option>
-    <option value="X" {% if fuel_type == 'X' %}selected{% endif %}>Regular Gasoline</option>
-</select>
-
-<div id="fuel-description" class="fuel-info-box">
-    <div class="fuel-icon" id="fuel-icon">⛽</div>
-    <div class="fuel-text" id="fuel-text">Choose a fuel type to learn more.</div>
-</div>
+					<select name="fuel_type" required onchange="updateFuelInfo(this.value)">
+					    <option value="Z" {% if fuel_type == 'Z' %}selected{% endif %}>Premium Gasoline</option>
+					    <option value="D" {% if fuel_type == 'D' %}selected{% endif %}>Diesel</option>
+					    <option value="E" {% if fuel_type == 'E' %}selected{% endif %}>Ethanol</option>
+					    <option value="N" {% if fuel_type == 'N' %}selected{% endif %}>Natural Gas</option>
+					    <option value="X" {% if fuel_type == 'X' %}selected{% endif %}>Regular Gasoline</option>
+					</select>
+					<div id="fuel-description" class="fuel-info-box">
+					    <div class="fuel-icon" id="fuel-icon">⛽</div>
+					    <div class="fuel-text" id="fuel-text">Choose a fuel type to learn more.</div>
+					</div>
                 </div>
-
                 <div class="step">
                     <label for="fuel_cons">Fuel Consumption (mpg):</label>
                     <input type="number" id="fuel_cons" name="fuel_cons" step="0.1" required aria-required="true" tabindex="0" value="{{fuel_cons if fuel_cons is defined else  '' }}">
                 </div>
-
                 <div class="step-buttons">
                     <button type="button" onclick="changeStep(-1)">Previous</button>
                     <button type="button" onclick="changeStep(1)">Next</button>
@@ -258,7 +255,6 @@ body {
                 </div>
             </form>
         </div>
-
         <div class="preview-panel">
             <div class="preview-title">🔍 CO2 Emission Dashboard</div>
             <div class="preview-item">Engine Size: <span id="preview-engine">-</span> L</div>
@@ -267,19 +263,17 @@ body {
             <div class="preview-item">Fuel Consumption: <span id="preview-consumption">-</span> mpg</div>
         </div>
     </div>
-
+	
     <script>
         let currentStep = 0;
         const steps = document.querySelectorAll(".step");
         const buttons = document.querySelectorAll("form button");
-
         function showStep(step) {
             steps.forEach((s, i) => s.classList.toggle("active", i === step));
             buttons[0].style.display = step > 0 ? "inline-block" : "none";
             buttons[1].style.display = step < steps.length - 1 ? "inline-block" : "none";
             buttons[2].style.display = step === steps.length - 1 ? "inline-block" : "none";
         }
-
         function changeStep(dir) {
             if (dir === 1 && !validateStep()) return;
             currentStep += dir;
@@ -287,7 +281,6 @@ body {
             if (currentStep >= steps.length) currentStep = steps.length - 1;
             showStep(currentStep);
         }
-
         function validateStep() {
             const inputs = steps[currentStep].querySelectorAll("input, select");
             for (let input of inputs) {
@@ -298,17 +291,14 @@ body {
             }
             return true;
         }
-
         function toggleTheme() {
             document.body.classList.toggle("light-mode");
         }
-
         // Real-time preview updates
         const previewEngine = document.getElementById('preview-engine');
         const previewCylinders = document.getElementById('preview-cylinders');
         const previewFuel = document.getElementById('preview-fuel');
         const previewConsumption = document.getElementById('preview-consumption');
-
         document.querySelector('input[name="engine_size"]').addEventListener('input', e => {
             previewEngine.textContent = e.target.value || '-';
         });
@@ -328,7 +318,6 @@ body {
         document.querySelector('input[name="fuel_cons"]').addEventListener('input', e => {
             previewConsumption.textContent = e.target.value || '-';
         });
-
         function updateFuelInfo(code) {
             const iconMap = {
                 Z: '⛽',
@@ -337,7 +326,6 @@ body {
                 N: '🔥',
                 X: '🚗'
             };
-
             const descMap = {
                 Z: 'Premium Gasoline provides better performance for high-end engines but emits more CO₂.',
                 D: 'Diesel engines are fuel-efficient but release more nitrogen oxides.',
@@ -345,17 +333,14 @@ body {
                 N: 'Natural Gas burns cleaner than gasoline or diesel, emitting fewer pollutants.',
                 X: 'Regular Gasoline is the standard fuel for most vehicles with average emission levels.'
             };
-
             document.getElementById('fuel-icon').textContent = iconMap[code] || '⛽';
             document.getElementById('fuel-text').textContent = descMap[code] || 'Select a fuel type to learn more.';
         }
-
         // Trigger on page load with preselected fuel type (if any)
         document.addEventListener('DOMContentLoaded', () => {
             const selected = document.querySelector('select[name="fuel_type"]').value;
             updateFuelInfo(selected);
         });
-
         showStep(currentStep);
     </script>
 </body>
