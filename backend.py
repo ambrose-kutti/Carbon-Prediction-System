@@ -13,8 +13,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 import joblib
 import os
 
-# Load Dataset
-df = pd.read_csv("CO2 Emissions_Canada.csv")
+df = pd.read_csv("CO2 Emissions_Canada.csv")    # Load Dataset
 
 # Feature selection
 features = ['Engine Size(L)', 'Cylinders', 'Fuel Type', 'Fuel Consumption Comb (mpg)']
@@ -33,8 +32,7 @@ preprocessor = ColumnTransformer(
         ('cat', OneHotEncoder(), categorical_features)
     ])
 
-# Create model directory if not exists
-os.makedirs("model", exist_ok=True)
+os.makedirs("model", exist_ok=True)    # Create model directory if not exists
 
 # 1. Random Forest
 rf_pipeline = Pipeline(steps=[
@@ -55,7 +53,6 @@ joblib.dump(svr_pipeline, 'model/svr_model.pkl')
 # 3. ANN Model
 X_processed = preprocessor.fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(X_processed, y, test_size=0.2, random_state=42)
-
 ann_model = Sequential([
     Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
     Dense(32, activation='relu'),
