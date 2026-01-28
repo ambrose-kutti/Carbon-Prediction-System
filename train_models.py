@@ -1,5 +1,3 @@
-# train_models.py
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -14,8 +12,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 import joblib
 import os
 
-# Load Dataset
-df = pd.read_csv("CO2 Emissions_Canada.csv")
+df = pd.read_csv("CO2 Emissions_Canada.csv")    # Load Dataset
 
 # Features and Target
 features = ['Engine Size(L)', 'Cylinders', 'Fuel Type', 'Fuel Consumption Comb (mpg)']
@@ -32,8 +29,7 @@ preprocessor = ColumnTransformer(transformers=[
     ('cat', OneHotEncoder(), categorical_features)
 ])
 
-# Ensure model directory exists
-os.makedirs("model", exist_ok=True)
+os.makedirs("model", exist_ok=True)    # Ensure model directory exists
 
 # Random Forest Model
 rf_pipeline = Pipeline([
@@ -61,8 +57,6 @@ ann_model = Sequential([
     Dense(1)
 ])
 ann_model.compile(optimizer='adam', loss='mean_absolute_error')
-ann_model.fit(X_train, y_train, validation_split=0.2, epochs=100, 
-                callbacks=[EarlyStopping(patience=10)], verbose=0)
+ann_model.fit(X_train, y_train, validation_split=0.2, epochs=100, callbacks=[EarlyStopping(patience=10)], verbose=0)
 ann_model.save('model/ann_model.h5')
-
 print("All models trained and saved successfully!")
