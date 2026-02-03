@@ -37,7 +37,7 @@ joblib
 
 ## 📁 Project Structure
 
-```
+``` 
 .
 ├── app.py
 ├── train_models.py
