@@ -23,7 +23,6 @@ y = df[target]
 # Preprocessing
 numeric_features = ['Engine Size(L)', 'Cylinders', 'Fuel Consumption Comb (mpg)']
 categorical_features = ['Fuel Type']
-
 preprocessor = ColumnTransformer(transformers=[
     ('num', StandardScaler(), numeric_features),
     ('cat', OneHotEncoder(), categorical_features)
@@ -50,7 +49,6 @@ joblib.dump(svr_pipeline, 'model/svr_model.pkl')
 # ANN Model
 X_processed = preprocessor.fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(X_processed, y, test_size=0.2, random_state=42)
-
 ann_model = Sequential([
     Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
     Dense(32, activation='relu'),
