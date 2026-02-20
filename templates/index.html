@@ -157,7 +157,7 @@
 		
 		    .step-buttons button {
 			    flex: 1;
-			    margin: 0 5px; /* Gives space on the left and right of each button */
+			    margin: 0 5px;  /* Gives space on the left and right of each button */
 			}
 
 	        .preview-panel {
@@ -233,6 +233,7 @@
                 <div class="step">
                     <label for="fuel_type">Fuel Type:</label>
 					<select name="fuel_type" required onchange="updateFuelInfo(this.value)">
+						<option value="A" {% if options   == 'A' %}selected{% endif %}>Select Fuel Type</option>
 					    <option value="Z" {% if fuel_type == 'Z' %}selected{% endif %}>Premium Gasoline</option>
 					    <option value="D" {% if fuel_type == 'D' %}selected{% endif %}>Diesel</option>
 					    <option value="E" {% if fuel_type == 'E' %}selected{% endif %}>Ethanol</option>
