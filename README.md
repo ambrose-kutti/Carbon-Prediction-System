@@ -29,10 +29,17 @@ The Carbon Emission Prediction System is a web-based application designed to pro
 ## 🖥️ Screenshots
 
 <!-- TODO: Add actual screenshots of the web application and its prediction results -->
-Home page with Toggle modee
+**Home page with Toggle mode**
+
+
 <img width="1274" height="571" alt="Screenshot 2026-03-06 130251" src="https://github.com/user-attachments/assets/a158f0cc-9800-467a-b411-cca8a9f0afd8" />
-Screenshot 2
-path-to-screenshot-of-prediction-results.png
+
+
+**Select the fuel type and along side with the information of the selected fuel is shown**
+
+
+<img width="1288" height="522" alt="Screenshot 2026-03-06 130326" src="https://github.com/user-attachments/assets/f7fbbf55-08cf-4297-abad-362df4b4cb35" />
+
 
 ## 🛠️ Tech Stack
 
@@ -181,7 +188,7 @@ Please feel free to fork the repository, make your changes, and submit a pull re
 
 ## 📄 License
 
-This project is open-source and available under the [LICENSE_NAME](LICENSE) - see the `LICENSE` file for details. <!-- TODO: Add a LICENSE file (e.g., MIT, Apache 2.0) -->
+This project is open-source and available for free of use.
 
 ## 🙏 Acknowledgments
 
