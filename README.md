@@ -41,6 +41,15 @@ The Carbon Emission Prediction System is a web-based application designed to pro
 <img width="1288" height="522" alt="Screenshot 2026-03-06 130326" src="https://github.com/user-attachments/assets/f7fbbf55-08cf-4297-abad-362df4b4cb35" />
 
 
+**Now select the fuel consumption and on the side the review/details will be shown**
+
+
+<img width="1263" height="463" alt="Screenshot 2026-03-06 130345" src="https://github.com/user-attachments/assets/46cdadf2-952f-428f-a118-6c1df1968fc1" />
+
+**After this the prediction will resulted and may be three types either HIGH MODERATE LOW**
+
+
+
 ## 🛠️ Tech Stack
 
 **Backend & Machine Learning:**
