@@ -69,7 +69,7 @@ The Carbon Emission Prediction System is a web-based application designed to pro
 
 `2`[Measures to be carried out](https://github.com/user-attachments/assets/006b0915-32ef-48c1-b185-d7a31bbe2825) 
 
-`3`[Recomendations]()
+`3`[Recomendations](https://github.com/user-attachments/assets/2398fb11-c2b9-446a-9564-ac4896e758a9)
 
 `LOW`
 
