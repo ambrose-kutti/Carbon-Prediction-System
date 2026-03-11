@@ -51,6 +51,8 @@ The Carbon Emission Prediction System is a web-based application designed to pro
 
 **After this the prediction will appear and  the result may fall in three categories either**
 
+**Results of the various categories can be viwed here:**
+
 `HIGH` 
 
 `1` [Prediction Result with Scale](https://github.com/user-attachments/assets/57345d33-cf72-4a05-b8ed-12c180ec1be9)
@@ -63,7 +65,7 @@ The Carbon Emission Prediction System is a web-based application designed to pro
 
 `MODERATE` 
 
-`1`[Prediction Result with Scale]()   
+`1`[Prediction Result with Scale](https://github.com/user-attachments/assets/34ce4258-0379-48b6-aa73-d1c9c8a678c4)   
 
 `2`[Measures to be carried out]() 
 
