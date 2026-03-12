@@ -29,27 +29,27 @@ The Carbon Emission Prediction System is a web-based application designed to pro
 ## 🖥️ Screenshots
 
 <!-- TODO: Add actual screenshots of the web application and its prediction results -->
-**Home page with Toggle mode**
+**1. Home page with Toggle mode**
 
 
 <img width="1236" height="498" alt="Screenshot 2026-03-09 113611" src="https://github.com/user-attachments/assets/26d13ba2-02c7-42fc-a2c2-682e158d5eb5" />
 
 
 
-**Select the fuel type and along side with the information of the selected fuel is shown**
+**2. Select the fuel type and along side with the information of the selected fuel is shown**
 
 
 <img width="1322" height="519" alt="Screenshot 2026-03-09 113626" src="https://github.com/user-attachments/assets/5918ff53-076e-46af-afdb-7f302d90e08d" />
 
 
 
-**Now select the fuel consumption and on the side the review/details will be shown**
+**3. Now select the fuel consumption and on the side the review/details will be shown**
 
 
 <img width="1304" height="458" alt="Screenshot 2026-03-09 113641" src="https://github.com/user-attachments/assets/26faf963-2d2c-489c-aa7a-abd089944642" />
 
 
-**After this the prediction will appear and  the result may fall in three categories either**
+**4. After this the prediction will appear and  the result may fall in three categories either**
 
 **Results of the various categories can be viwed here:**
 
